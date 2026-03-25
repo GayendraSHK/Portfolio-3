@@ -7,6 +7,7 @@ export const personalData = {
   phone: '+94 71 658 8619',
   address: 'Matara, Sri Lanka',
   github: 'https://github.com/GayendraSHK',
+  whatsapp: 'https://wa.me/94716588619?text=Hi%20Kaveesha%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect.',
   facebook: 'https://www.facebook.com/',
   linkedIn: 'https://www.linkedin.com/in/kaveesha-gayendra',
   twitter: 'https://twitter.com/',
