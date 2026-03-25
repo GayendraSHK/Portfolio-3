@@ -4,6 +4,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
+import Image from "next/image";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -22,12 +23,26 @@ function Navbar() {
     <nav className="sticky top-3 z-[80] mb-6">
       <div className="panel-card px-3 py-3 sm:px-4 sm:py-2.5 md:px-5 md:py-3 backdrop-blur-sm">
         <div className="flex items-center justify-between">
-          <Link
+          {/* <Link
             href="/"
             className="text-[#2dd4bf] text-3xl font-bold"
             onClick={closeMenu}
           >
             <img
+              src="/Name_Logo.png"
+              alt="Kaveesha Gayendra"
+              width={333}
+              height={100}
+              className="h-9 w-auto rounded-full object-contain sm:h-10"
+            />
+          </Link> */}
+
+          <Link
+            href="/"
+            className="text-[#2dd4bf] text-3xl font-bold"
+            onClick={closeMenu}
+          >
+            <Image
               src="/Name_Logo.png"
               alt="Kaveesha Gayendra"
               width={333}

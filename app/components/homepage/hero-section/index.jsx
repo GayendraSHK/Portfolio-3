@@ -23,7 +23,7 @@ function HeroSection() {
           <h1 className="section-kicker-2 mb-3">Hello,</h1>
           <h1 className="text-2xl font-bold leading-tight text-slate-100 sm:text-3xl md:text-5xl md:font-extrabold md:leading-[1.15]">
             This is {personalData.name}, {" "}
-            <span className="block text-sky-300">I'm Full Stack Developer.</span>
+            <span className="block text-sky-300">I&apos;m Full Stack Developer.</span>
           </h1>
           <p className="mt-5 max-w-xl text-sm leading-7 text-slate-300 md:text-base">
             I am {personalData.name}, a {personalData.designation} focused on crafting
