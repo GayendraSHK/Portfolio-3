@@ -68,7 +68,7 @@ export default function ContactForm() {
 
   return (
     <div>
-      <p className="section-kicker mb-4">Let's Build Something</p>
+      <p className="section-kicker mb-4">Let&apos;s Build Something</p>
       <div className="panel-card max-w-3xl p-4 lg:p-6">
         <p className="text-sm leading-7 text-slate-300">
           {
