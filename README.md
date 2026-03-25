@@ -1,4 +1,4 @@
-# Kaveesha Gayendra Portfolio
+# Kaveesha Gayendra's Portfolio
 
 A modern, dark-themed software engineer portfolio built with Next.js.
 
@@ -23,8 +23,8 @@ It includes:
 ### 1. Clone
 
 ```bash
-git clone https://github.com/GayendraSHK/My-Portfolio.git
-cd My-Portfolio
+git clone https://github.com/GayendraSHK/Portfolio-3.git
+cd Portfolio-3
 ```
 
 ### 2. Install Dependencies
