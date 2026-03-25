@@ -4,6 +4,7 @@ import { personalData } from "@/utils/data/personal-data";
 import Image from "next/image";
 import Link from "next/link";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
+import { FaWhatsapp } from "react-icons/fa6";
 import { MdDownload } from "react-icons/md";
 import { RiContactsFill } from "react-icons/ri";
 
@@ -35,6 +36,7 @@ function HeroSection() {
             <Link
               href={personalData.github}
               target="_blank"
+              rel="noreferrer"
               className="rounded-full border border-slate-700 bg-slate-900/70 p-3 text-slate-200 transition-all duration-300 hover:-translate-y-1 hover:border-sky-400 hover:text-sky-300"
             >
               <BsGithub size={20} />
@@ -42,9 +44,19 @@ function HeroSection() {
             <Link
               href={personalData.linkedIn}
               target="_blank"
+              rel="noreferrer"
               className="rounded-full border border-slate-700 bg-slate-900/70 p-3 text-slate-200 transition-all duration-300 hover:-translate-y-1 hover:border-teal-400 hover:text-teal-300"
             >
               <BsLinkedin size={20} />
+            </Link>
+            <Link
+              href={personalData.whatsapp}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full border border-slate-700 bg-slate-900/70 p-3 text-slate-200 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-400 hover:text-emerald-300"
+              aria-label="Chat on WhatsApp"
+            >
+              <FaWhatsapp size={20} />
             </Link>
           </div>
 

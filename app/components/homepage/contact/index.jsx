@@ -3,6 +3,7 @@ import { personalData } from '@/utils/data/personal-data';
 import Link from 'next/link';
 import { BiLogoLinkedin } from "react-icons/bi";
 import { CiLocationOn } from "react-icons/ci";
+import { FaWhatsapp } from "react-icons/fa6";
 import { IoLogoGithub, IoMdCall } from "react-icons/io";
 import { MdAlternateEmail } from "react-icons/md";
 import ContactForm from './contact-form';
@@ -66,15 +67,21 @@ function ContactSection() {
             </p>
           </div>
           <div className="mt-8 lg:mt-16 flex items-center gap-5 lg:gap-10">
-            <Link target="_blank" href={personalData.github}>
+            <Link target="_blank" rel="noreferrer" href={personalData.github}>
               <IoLogoGithub
                 className="cursor-pointer rounded-full border border-slate-700 bg-slate-900/80 p-3 text-slate-200 transition-all duration-300 hover:scale-110 hover:border-teal-300 hover:text-teal-200"
                 size={48}
               />
             </Link>
-            <Link target="_blank" href={personalData.linkedIn}>
+            <Link target="_blank" rel="noreferrer" href={personalData.linkedIn}>
               <BiLogoLinkedin
                 className="cursor-pointer rounded-full border border-slate-700 bg-slate-900/80 p-3 text-slate-200 transition-all duration-300 hover:scale-110 hover:border-sky-300 hover:text-sky-200"
+                size={48}
+              />
+            </Link>
+            <Link target="_blank" rel="noreferrer" href={personalData.whatsapp} aria-label="Chat on WhatsApp">
+              <FaWhatsapp
+                className="cursor-pointer rounded-full border border-slate-700 bg-slate-900/80 p-3 text-slate-200 transition-all duration-300 hover:scale-110 hover:border-emerald-300 hover:text-emerald-200"
                 size={48}
               />
             </Link>
