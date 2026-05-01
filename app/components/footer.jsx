@@ -20,7 +20,7 @@ function Footer() {
             </Link>
           </p>
           <p className="text-xs uppercase tracking-[0.18em] text-slate-500">
-            Software Engineer • Full Stack • Problem Solver
+            Software Engineer • Full Stack Developer • IT Undergraduate
           </p>
         </div>
       </div>

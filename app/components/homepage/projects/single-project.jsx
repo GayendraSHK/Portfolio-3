@@ -126,7 +126,7 @@ const SingleProject = ({ project }) => {
                     src={image || '/png/placeholder.png'}
                     alt={name}
                     fill
-                    className="object-cover object-top"
+                    className="object-contain object-center"
                     sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                 </div>
