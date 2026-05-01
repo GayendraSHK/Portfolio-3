@@ -25,10 +25,10 @@ function AboutSection() {
         <div className="flex justify-center order-1 lg:order-2">
           <Image
             src={personalData.profile}
-            width={280}
-            height={280}
+            width={430}
+            height={430}
             alt="Kaveesha Gayendra"
-            className="h-[260px] w-[260px] rounded-2xl border border-slate-700/70 object-cover transition-all duration-700 hover:scale-[1.04]"
+            className="h-[430px] w-[430px] rounded-2xl border border-slate-700/70 object-cover transition-all duration-700 hover:scale-[1.04]"
           />
         </div>
       </div>
