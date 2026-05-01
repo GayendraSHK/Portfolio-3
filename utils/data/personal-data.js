@@ -2,6 +2,12 @@ export const personalData = {
   name: "Kaveesha Gayendra",
   profile: '/Profile_Image.jpg',
   designation: "Full Stack Developer",
+  roles: [
+    "Full Stack Developer",
+    "IT Undergraduate",
+    "FrontEnd Developer",
+    "BackEnd Developer"
+  ],
   description: "I am Kaveesha Gayendra, highly motivated and enthusiastic IT undergraduate at the University of Moratuwa, driven by a passion for technology and a commitment to excellence. With a solid academic background and strong technical skills, I thrive in dynamic environments where I can tackle challenges and continuously grow. Eager to expand my knowledge and stay at the forefront of emerging technologies, I am dedicated to contributing to innovative, impactful projects. Whether working independently or as part of a team, I focus on delivering high-quality results and making a meaningful impact in the ever-evolving world of technology.",
   email: 'kaveeshagayendra2@gmail.com',
   phone: '+94 71 658 8619',
