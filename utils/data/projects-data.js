@@ -34,6 +34,17 @@ export const projectsData = [
     },
     {
         id: 4,
+        name: 'Hosting Expert - Web Hosting Recommendation System',
+        description: 'A full-stack application that recommends suitable web hosting providers based on your technology stack and budget. Designed specifically for hosting options available in Sri Lanka.',
+        tools: ['React', 'CSS3', 'SWI-Prolog'],
+        role: 'Full Stack Developer',
+        code: 'https://github.com/GayendraSHK/Hosting-Expert.git',
+        demo: 'https://drive.google.com/file/d/1K9CpCe6vwAJ5mhriRJFoER8rLM2cDGIi/view?usp=sharing',
+        image: '/image/hostingExpert.png',
+        // featured: true,
+    },
+    {
+        id: 5,
         name: 'Portfolio Website',
         description: "I developed a personal portfolio website using React, Tailwind CSS, and Next.js to showcase my skills, projects, and experience. The website features a responsive design, smooth animations, and an easy-to-navigate layout. I implemented SEO best practices to improve visibility and integrated contact forms for potential clients to reach out. The site is hosted on Vercel for optimal performance and scalability.",
         tools: ['React', 'Tailwind CSS', 'Next.js', 'Vercel'],
