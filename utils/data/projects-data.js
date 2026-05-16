@@ -23,6 +23,17 @@ export const projectsData = [
     },
     {
         id: 3,
+        name: 'Sri Lankan Used Vehicle Price Predictor',
+        description: 'Sri Lankan Vehicle Price Predictor is a machine learning app that scrapes used vehicle data, trains an XGBoost model, and predicts prices through a Streamlit interface.',
+        tools: ['Python', 'xgboost', 'SHAP', 'streamlit'],
+        role: 'Full Stack Developer',
+        code: 'https://github.com/GayendraSHK/Vehicle-Price-Predictor.git',
+        demo: 'https://drive.google.com/file/d/19mOwF21G7DtltPnvNJPbBIboBKI23UE_/view?usp=sharing',
+        image: '/image/vehiclePricePredictor.png',
+        // featured: true,
+    },
+    {
+        id: 4,
         name: 'Portfolio Website',
         description: "I developed a personal portfolio website using React, Tailwind CSS, and Next.js to showcase my skills, projects, and experience. The website features a responsive design, smooth animations, and an easy-to-navigate layout. I implemented SEO best practices to improve visibility and integrated contact forms for potential clients to reach out. The site is hosted on Vercel for optimal performance and scalability.",
         tools: ['React', 'Tailwind CSS', 'Next.js', 'Vercel'],
