@@ -54,15 +54,15 @@ export const projectsData = [
         image: '/image/portfolio.png',
         // featured: true,
     },
-    // {
-    //     id: 3,
-    //     name: 'Smart Auditorium',
-    //     description: 'For this project, we have created an Arduino-based system that is specifically aimed at optimizing treatment and management in a smart auditorium. The objective of this microcontroller-based solution is to improve the overall experience for presenters and attendees by guaranteeing smooth operations and improved functionality during events.',
-    //     tools: ['Arduino', 'C'],
-    //     code: '',
-    //     role: '',
-    //     demo: '',
-    // },
+    {
+        id: 6,
+        name: 'Smart Auditorium',
+        description: 'For this project, we have created an Arduino-based system that is specifically aimed at optimizing treatment and management in a smart auditorium. The objective of this microcontroller-based solution is to improve the overall experience for presenters and attendees by guaranteeing smooth operations and improved functionality during events.',
+        tools: ['Arduino', 'C'],
+        code: '',
+        role: '',
+        demo: '',
+    },
 ];
 
 
