@@ -1,7 +1,31 @@
+"use client";
+
+import { useEffect, useRef, useState } from 'react';
 import { projectsData } from '@/utils/data/projects-data';
 import SingleProject from './single-project';
 
 const Projects = () => {
+  const [showAllProjects, setShowAllProjects] = useState(false);
+  const firstExpandedProjectRef = useRef(null);
+  const visibleProjects = showAllProjects ? projectsData : projectsData.slice(0, 6);
+
+  useEffect(() => {
+    if (!showAllProjects || !firstExpandedProjectRef.current || globalThis.window === undefined) {
+      return undefined;
+    }
+
+    const isMobile = globalThis.window.matchMedia('(max-width: 767px)').matches;
+
+    if (!isMobile) {
+      return undefined;
+    }
+
+    const animationFrameId = globalThis.window.requestAnimationFrame(() => {
+      firstExpandedProjectRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    return () => globalThis.window.cancelAnimationFrame(animationFrameId);
+  }, [showAllProjects]);
 
   return (
     <div id='projects' className="relative z-50 my-14 lg:my-24">
@@ -17,10 +41,27 @@ const Projects = () => {
 
       <div className="pt-16 md:pt-24">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {projectsData.slice(0, 6).map((project) => (
-            <SingleProject key={project.id} project={project} />
+          {visibleProjects.map((project, index) => (
+            <div
+              key={project.id}
+              ref={showAllProjects && index === 6 ? firstExpandedProjectRef : null}
+            >
+              <SingleProject project={project} />
+            </div>
           ))}
         </div>
+
+        {projectsData.length > 6 && (
+          <div className="mt-10 flex justify-center">
+            <button
+              type="button"
+              onClick={() => setShowAllProjects((currentValue) => !currentValue)}
+              className="rounded-full border border-teal-300/50 bg-slate-900 px-6 py-3 text-sm font-semibold text-teal-200 transition-all duration-300 hover:border-teal-200 hover:bg-slate-800 hover:text-white"
+            >
+              {showAllProjects ? 'Show Less' : 'Show More Projects'}
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

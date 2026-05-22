@@ -15,7 +15,15 @@ function AnimateOnScroll({ children, delay = 0, className = "" }) {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Re-trigger animation every time section enters/leaves viewport.
+        const isMobile = globalThis.window.matchMedia('(max-width: 767px)').matches;
+
+        if (isMobile) {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+          return;
+        }
+
         setIsVisible(entry.isIntersecting);
       },
       {

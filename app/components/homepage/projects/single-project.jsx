@@ -5,10 +5,10 @@ import { createPortal } from 'react-dom';
 import Image from 'next/image';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
-import { FiCode, FiGlobe, FiX } from 'react-icons/fi';
+import { FiCode, FiGlobe, FiPlay, FiX } from 'react-icons/fi';
 
 const SingleProject = ({ project }) => {
-  const { name, description, tools = [], code, demo, image, featured, role } = project;
+  const { name, description, tools = [], code, demo, demoType = 'live', image, featured, role } = project;
   const [isOpen, setIsOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
 
@@ -39,6 +39,7 @@ const SingleProject = ({ project }) => {
 
   const hasCode = Boolean(code);
   const hasDemo = Boolean(demo);
+  const isVideoDemo = demoType === 'video';
 
   const codeClass = hasCode
     ? 'bg-slate-950 text-slate-100 hover:bg-slate-900'
@@ -176,13 +177,13 @@ const SingleProject = ({ project }) => {
                         rel="noreferrer"
                         className={`inline-flex items-center justify-center gap-2 rounded-lg px-4 py-3 text-base font-semibold transition-all ${demoClass}`}
                       >
-                        <FiGlobe size={18} />
-                        Live Demo
+                        {isVideoDemo ? <FiPlay size={18} /> : <FiGlobe size={18} />}
+                        {isVideoDemo ? 'Demo Video' : 'Live Demo'}
                       </Link>
                     ) : (
                       <span className={`inline-flex items-center justify-center gap-2 rounded-lg px-4 py-3 text-base font-semibold ${demoClass}`}>
-                        <FiGlobe size={18} />
-                        Live Demo
+                        {isVideoDemo ? <FiPlay size={18} /> : <FiGlobe size={18} />}
+                        {isVideoDemo ? 'Demo Video' : 'Live Demo'}
                       </span>
                     )}
                   </div>
@@ -206,6 +207,7 @@ SingleProject.propTypes = {
     tools: PropTypes.arrayOf(PropTypes.string),
     code: PropTypes.string,
     demo: PropTypes.string,
+    demoType: PropTypes.oneOf(['live', 'video']),
     image: PropTypes.string,
     featured: PropTypes.bool,
     role: PropTypes.string,
