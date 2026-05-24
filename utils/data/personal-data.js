@@ -1,6 +1,6 @@
 export const personalData = {
   name: "Kaveesha Gayendra",
-  profile: '/Profile_Image.jpg',
+  profile: '/Profile_Image.png',
   designation: "Full Stack Developer",
   roles: [
     "Full Stack Developer",
