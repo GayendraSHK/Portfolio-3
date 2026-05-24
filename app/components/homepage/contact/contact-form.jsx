@@ -70,7 +70,7 @@ export default function ContactForm() {
     <div>
       <p className="section-kicker mb-4">Let&apos;s Build Something</p>
       <div className="panel-card max-w-3xl p-4 lg:p-6">
-        <p className="text-sm leading-7 text-slate-300">
+        <p className="text-base md:text-lg leading-7 text-slate-300">
           {
             "I am currently open to new projects and would love to hear about any opportunities you have in mind. Feel free to reach out to me at any time. I'm always available to discuss how I can contribute to your next venture."
           }
