@@ -1,44 +1,59 @@
 'use client';
 
+import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 
 export function RotatingText({ roles }) {
   const [currentRole, setCurrentRole] = useState(0);
-  const [displayedText, setDisplayedText] = useState('');
+  const [displayedRole, setDisplayedRole] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    const fullText = `I'm ${roles[currentRole]}.`;
+    const fullRole = roles[currentRole] ?? '';
     const speed = isDeleting ? 50 : 100; // Faster deletion
+    let timerId;
+    let pauseTimerId;
 
-    const timer = setTimeout(() => {
-      if (!isDeleting) {
-        // Typing
-        if (displayedText.length < fullText.length) {
-          setDisplayedText(fullText.slice(0, displayedText.length + 1));
-        } else {
-          // Finished typing, wait before deleting
-          setTimeout(() => setIsDeleting(true), 1500);
-        }
+    if (isDeleting) {
+      if (displayedRole.length > 0) {
+        timerId = setTimeout(() => {
+          setDisplayedRole(displayedRole.slice(0, -1));
+        }, speed);
       } else {
-        // Deleting
-        if (displayedText.length > 0) {
-          setDisplayedText(displayedText.slice(0, -1));
-        } else {
-          // Finished deleting, move to next role
+        timerId = setTimeout(() => {
           setCurrentRole((prev) => (prev + 1) % roles.length);
           setIsDeleting(false);
-        }
+        }, speed);
       }
-    }, speed);
+    } else if (displayedRole.length < fullRole.length) {
+      timerId = setTimeout(() => {
+        setDisplayedRole(fullRole.slice(0, displayedRole.length + 1));
+      }, speed);
+    } else {
+      pauseTimerId = setTimeout(() => {
+        setIsDeleting(true);
+      }, 1500);
+    }
 
-    return () => clearTimeout(timer);
-  }, [displayedText, isDeleting, currentRole, roles]);
+    return () => {
+      if (timerId) {
+        clearTimeout(timerId);
+      }
+
+      if (pauseTimerId) {
+        clearTimeout(pauseTimerId);
+      }
+    };
+  }, [displayedRole, isDeleting, currentRole, roles]);
 
   return (
     <span className="block text-sky-300">
-      {displayedText}
+      I&apos;m {displayedRole}
       <span className="animate-pulse">|</span>
     </span>
   );
 }
+
+RotatingText.propTypes = {
+  roles: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
