@@ -91,7 +91,7 @@ export default function ContactForm() {
               type="text"
               maxLength="100"
               required={true}
-              placeholder="Your Name"
+              placeholder="Enter your name here..."
               onBlur={checkRequired}
             />
           </div>
@@ -110,7 +110,7 @@ export default function ContactForm() {
               type="email"
               maxLength="100"
               required={true}
-              placeholder="Your Email"
+              placeholder="Enter your email here..."
               onBlur={(e) => {
                 checkRequired(e);
                 checkEmail(e);
@@ -134,7 +134,7 @@ export default function ContactForm() {
               className="w-full rounded-md border border-slate-700 bg-slate-900/80 px-3 py-2 text-slate-100 outline-0 transition-all duration-300 focus:border-sky-300"
               maxLength="500"
               required={true}
-              placeholder="Your Message"
+              placeholder="Type Your Message Here..."
               rows="4"
               onBlur={checkRequired}
             />
