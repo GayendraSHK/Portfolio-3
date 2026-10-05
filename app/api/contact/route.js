@@ -96,6 +96,7 @@ export async function POST(request) {
     const safeName = escapeHtml(senderName);
     const safeEmail = escapeHtml(senderEmail);
     const safeMessage = escapeHtml(senderMessage).replaceAll("\n", "<br />");
+    const logoUrl = `${process.env.NEXT_PUBLIC_APP_URL || "https://www.kaveeshagayendra.dev"}/Name_Logo.png`;
     const autoReplyHtml = `
       <!doctype html>
       <html lang="en">
@@ -106,8 +107,8 @@ export async function POST(request) {
                 <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="max-width: 600px; background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden;">
                   <tr>
                     <td style="background-color: #0f172a; padding: 28px 32px; text-align: center;">
-                      <p style="margin: 0; color: #5eead4; font-size: 13px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase;">Kaveesha Gayendra</p>
-                      <h1 style="margin: 12px 0 0; color: #ffffff; font-size: 26px; line-height: 1.3;">Thanks for reaching out!</h1>
+                      <img src="${logoUrl}" alt="Kaveesha Gayendra" width="180" style="display: block; width: 180px; height: auto; margin: 0 auto;" />
+                      <h1 style="margin: 12px 0 0; color: #5eead4; font-size: 26px; line-height: 1.3;">Thanks for reaching out!</h1>
                     </td>
                   </tr>
                   <tr>
