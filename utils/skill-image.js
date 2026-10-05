@@ -43,6 +43,7 @@ import memsql from '../app/assets/svg/skills/memsql.svg';
 import microsoftoffice from '../app/assets/svg/skills/microsoftoffice.svg';
 import mongoDB from '../app/assets/svg/skills/mongoDB.svg';
 import mysql from '../app/assets/svg/skills/mysql.svg';
+import mssql from '../app/assets/svg/skills/mssql.svg';
 import nextJS from '../app/assets/svg/skills/nextJS.svg';
 import nginx from '../app/assets/svg/skills/nginx.svg';
 import numpy from '../app/assets/svg/skills/numpy.svg';
@@ -134,6 +135,8 @@ export const skillsImage = (skill) => {
       return mongoDB;
     case 'mysql':
       return mysql;
+    case 'mssql':
+      return mssql;
     case 'postgresql':
       return postgresql;
     case 'tailwind':
