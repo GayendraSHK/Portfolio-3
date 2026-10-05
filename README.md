@@ -38,9 +38,13 @@ npm install
 Create a `.env.local` file in the project root:
 
 ```env
-NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY=your_web3forms_key
 NEXT_PUBLIC_GTM=GTM-XXXXXXX
+EMAIL_ADDRESS=your-email@gmail.com
+GMAIL_PASSKEY=your-gmail-app-password
+CONTACT_EMAIL=your-email@gmail.com
 ```
+
+The contact form sends the message to `CONTACT_EMAIL` and automatically replies to the visitor. For Gmail, create an App Password with two-step verification enabled; do not use your regular Gmail password. Keep these values in `.env.local` and add the same variables to your deployment provider.
 
 ### 4. Run Development Server
 

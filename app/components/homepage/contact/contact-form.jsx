@@ -13,8 +13,6 @@ export default function ContactForm() {
     setIsLoading(true);
 
     const formData = new FormData(e.target);
-    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY);
-
     const name = formData.get("name");
     const email = formData.get("email");
     const message = formData.get("message");
@@ -35,16 +33,17 @@ export default function ContactForm() {
     }
 
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
+      const res = await fetch("/api/contact", {
         method: "POST",
-        body: formData,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
       }).then((response) => response.json());
 
       if (res.success) {
         toast.success("Message sent successfully!");
         e.target.reset();
       } else {
-        toast.error("Something went wrong! Please try again.");
+        toast.error(res.error || "Something went wrong! Please try again.");
       }
     } catch {
       toast.error("Failed to send message. Please try again later.");
@@ -93,6 +92,7 @@ export default function ContactForm() {
               required={true}
               placeholder="Enter your name here..."
               onBlur={checkRequired}
+              disabled={isLoading}
             />
           </div>
 
@@ -111,6 +111,7 @@ export default function ContactForm() {
               maxLength="100"
               required={true}
               placeholder="Enter your email here..."
+              disabled={isLoading}
               onBlur={(e) => {
                 checkRequired(e);
                 checkEmail(e);
@@ -137,6 +138,7 @@ export default function ContactForm() {
               placeholder="Type Your Message Here..."
               rows="4"
               onBlur={checkRequired}
+              disabled={isLoading}
             />
           </div>
 
